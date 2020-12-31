@@ -11,4 +11,14 @@ for row in csv_file:
     iris_list.append(ExtendedList(row))
 
 iris_list = iris_list[1:]
-print(iris_list)
+iris_list2=[]
+for obj in iris_list:
+    temp_list = []
+    iterator = iter(ExtendedList.next_val(obj.lst))
+    while True:
+        try:
+            temp_list.append(next(iterator))
+        except StopIteration:
+            break
+    iris_list2.append(ExtendedList(temp_list))
+

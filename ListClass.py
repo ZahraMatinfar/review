@@ -27,6 +27,14 @@ class ExtendedList(list):
     def __ne__(self, other):
         return self.avg() != other.avg()
 
+    @staticmethod
+    def next_val(lst):
+        for item in lst:
+            try:
+                yield float(item)
+            except:
+                yield item
+
 
 class TypeList(ExtendedList):
     def __eq__(self, other):
